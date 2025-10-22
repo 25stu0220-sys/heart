@@ -1,17 +1,39 @@
-import numpy as np
+## matplotlib 
+
+# Matplotlib 소개
+
+---
+
+## 1. Matplotlib이란?
+
+- **Matplotlib**은 파이썬에서 가장 널리 사용되는 데이터 시각화 라이브러리입니다.
+- 그래프, 차트, 플롯 등 다양한 형태의 2D 및 간단한 3D 그래픽을 그릴 수 있습니다.
+- 과학, 공학, 데이터 분석, 머신러닝 등 여러 분야에서 데이터의 패턴과 인사이트를 시각적으로 표현할 때 사용됩니다.
+
+---
+
+## 2. 주요 특징
+
+| 특징                  | 설명                                       |
+|-----------------------|--------------------------------------------|
+| 다양한 플롯 종류       | 선 그래프, 막대 그래프, 산점도, 히스토그램 등 다양한 그래프 지원 |
+| 사용자 정의 가능       | 축, 레이블, 색상, 스타일 등 세밀한 커스터마이징 가능       |
+| 인터랙티브 환경 지원   | Jupyter Notebook, Google Colab 등과 연동 가능           |
+| 출력 포맷 다양성       | PNG, PDF, SVG 등 다양한 파일 포맷으로 저장 가능          |
+| 다른 라이브러리 연동   | NumPy, Pandas, Seaborn 등과 쉽게 통합 사용 가능          |
+
+---
+
+## 3. 기본 사용 예제
+
+```python
 import matplotlib.pyplot as plt
 
-# t 값 생성 (0~2pi 범위)
-t = np.linspace(0, 2 * np.pi, 1000)
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 7, 11]
 
-# 하트 곡선 공식
-x = 16 * np.sin(t)**3
-y = 13 * np.cos(t) - 5 * np.cos(2*t) - 2 * np.cos(3*t) - np.cos(4*t)
-
-plt.figure(figsize=(6,6))
-plt.plot(x, y, color='red', linewidth=3)
-plt.fill_between(x, y, color='pink')  # 하트 내부 색칠
-plt.title("Heart Shape with Matplotlib", fontsize=16)
-plt.axis('equal')  # x, y 비율 같게
-plt.axis('off')    # 축 제거
+plt.plot(x, y)
+plt.title("간단한 선 그래프")
+plt.xlabel("X 축")
+plt.ylabel("Y 축")
 plt.show()
